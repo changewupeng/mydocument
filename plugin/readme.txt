@@ -1,0 +1,1 @@
+1、2018-2-26新增合并table相同内容的单元格的插件jquery.mergeTableCell.js，用法请参照mergeTableCell.html
