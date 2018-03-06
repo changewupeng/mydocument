@@ -26,8 +26,7 @@
           document.body.appendChild(tempForm);
           tempForm.submit();
           return tempForm;
-      }
-      ，
+      },
 
       //以get的方式跳转
       forwordDefineUrlByGet:function(url,params){
@@ -39,7 +38,7 @@
         if(Object.getOwnPropertyNames(params)>0){
           parameter+="?";
           for(var param in params ){
-            parameter+=param+"="params[param]+"&";
+            parameter+=param+"="+params[param]+"&";
           }
           parameter.substr(0,parameter.length-1);
         }
@@ -50,7 +49,7 @@
         window.history.back(-1);
       },
       //获取项目的根目录
-      getRootPath：function() {
+      getRootPath:function() {
             //获取当前网址，如： http://localhost:8083/pms/res/case/caseContain.html
             var curWwwPath = window.document.location.href;
             //获取主机地址之后的目录，如： pms/res/case/caseContain.html

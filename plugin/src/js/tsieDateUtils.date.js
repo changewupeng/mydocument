@@ -22,6 +22,7 @@
 
   $.extend({
     tsieDateUtils:{
+      //日期格式化
       dateFormat:function(date,format){
         var
           _date=date||new Date(),
@@ -58,6 +59,51 @@
           _timeStamp=timeStamp||$.date2TimeStamp(),
           date=new Date(_timeStamp);
         return date;
+      }
+      ，
+
+      /*
+       *说明：将日期转换为星期几
+       *@date 时间
+       *
+       */
+      nowFewWeeks:function（date）{
+        if(date instanceof Date){
+           var dayNames = new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+           return dayNames[date.getDay()];
+       } else{
+           return "Param error,date type!";
+       }
+      }
+      ，
+      /**
+        *说明：计算两个时间之间的差值
+        *@startDate  开始时间
+        *@endDate    结束时间
+        *@pattern    转换后的单位['day','hour','min','second']
+        */
+      dateMinus:function(startDate,endDate,pattern){
+        var _patterns=['day','hour','min','second'];
+
+        var _pattern=pattern||'second';
+
+        if(_patterns.indexOf(_pattern)<0){
+          console.error("转化模式不对");
+        }
+
+        if(startDate instanceof Date && endDate instanceof Date){
+            var minus=Math.floor((endDate-startDate);
+            if(pattern=="day"){
+              return minus/(1000 * 60 * 60 * 24));
+            }else if(pattern=="hour"){
+              return minus/(1000 * 60 * 60));
+            }else if(pattern=="min"){
+              return minus/(1000 * 60));
+            }else
+              return minus/1000;
+        }else{
+            return "Param error,date type!";
+        }
       }
 
     }
