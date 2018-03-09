@@ -6,8 +6,11 @@
 
   $.extend({
     tsieCommonUtils:{
-
-      //模拟提交post请求的方法
+      /**
+        *  在前端模拟一个post请求，例如模拟登录
+        *  @param  url
+        *  @param  param
+        */
       simulatePost:function(url,param){
         if(!url){
           alert("simulatePost函数的url参数不能为空");
@@ -28,7 +31,11 @@
           return tempForm;
       },
 
-      //以get的方式跳转
+      /**
+        *  以get方式跳转
+        *  @param  url
+        *  @param  param
+        */
       forwordDefineUrlByGet:function(url,params){
         if(!url){
           alert("forwordDefineUrlByGet函数的url参数不能为空");
@@ -44,11 +51,17 @@
         }
         window.location.href=url+parameter;
       },
-      //返回上一页
+
+      /**
+        *
+        *说明：返回上一页
+        */
       historyBack:function(){
         window.history.back(-1);
       },
-      //获取项目的根目录
+      /**
+        *获取项目的根目录
+        */a
       getRootPath:function() {
             //获取当前网址，如： http://localhost:8083/pms/res/case/caseContain.html
             var curWwwPath = window.document.location.href;

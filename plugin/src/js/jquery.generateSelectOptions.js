@@ -3,7 +3,7 @@
   *作者：wupeng
   *时间：2018-3-6
   *有问题请联系我：2050579844@qq.com
-  *
+  *用法： $(dom).generateSelectOptions(options,defaultSelectValue)
   */
 
 ;(function($){
@@ -12,6 +12,12 @@
     var _defaultSelectValue="default";
 
     $.fn.extend({
+      /**
+      * 生产 selectoption
+      * @param options
+      * @param defaultSelectValue
+      *
+      */
       "generateSelectOptions":function(options,defaultSelectValue){
          var opts = $.extend({}, _defaults, options),
              selectedValue=defaultSelectValue||_defaultSelectValue;

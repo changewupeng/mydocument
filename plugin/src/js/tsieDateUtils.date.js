@@ -22,7 +22,12 @@
 
   $.extend({
     tsieDateUtils:{
-      //日期格式化
+      /**
+      * 格式化日期
+      * @param date
+      * @param format
+      * @returns {string}
+      */
       dateFormat:function(date,format){
         var
           _date=date||new Date(),
@@ -47,13 +52,21 @@
             result="";
           return result;
       },
-      //将时间转化为时间戳
+      /**
+      * 将时间转化为时间戳
+      * @param date
+      * @returns {string}
+      */
       date2TimeStamp:function(date){
         var _date=date||new Date();
         return Date.parse(_date);
       },
 
-      //将时间戳转化为时间
+      /**
+      * 将时间戳转化为时间
+      * @param timeStamp
+      * @returns {Date}
+      */
       timeStamp2Date:function(timeStamp){
         var
           _timeStamp=timeStamp||$.date2TimeStamp(),
@@ -62,10 +75,10 @@
       }
       ，
 
-      /*
+      /**
        *说明：将日期转换为星期几
-       *@date 时间
-       *
+       * @param date
+       * @returns {String}
        */
       nowFewWeeks:function（date）{
         if(date instanceof Date){
@@ -76,11 +89,11 @@
        }
       }
       ，
-      /**
+      /***
         *说明：计算两个时间之间的差值
-        *@startDate  开始时间
-        *@endDate    结束时间
-        *@pattern    转换后的单位['day','hour','min','second']
+        *@param startDate  开始时间
+        *@param endDate    结束时间
+        *@param pattern    转换后的单位['day','hour','min','second']
         */
       dateMinus:function(startDate,endDate,pattern){
         var _patterns=['day','hour','min','second'];
