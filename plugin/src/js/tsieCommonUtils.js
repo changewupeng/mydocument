@@ -74,6 +74,25 @@
             var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
             return (localhostPaht + projectName);
         }
+        ,
+        /**
+          *说明：获取字典
+          *@param url 链接地址
+          *@return {Object}
+          **/
+        getDicByUrl:function(url){
+          var result;
+          $.ajax({
+            type:'get',
+            url:url,
+            data:{},
+            async:false,
+            success:function(resData){
+              result=resData;
+            }
+          });
+          return resData;
+        }
 
     }
   });
