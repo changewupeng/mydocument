@@ -7,7 +7,7 @@
   $.extend({
     jqgridUtils:{
        /**
-         *获取jqgrid所有选中的数据
+         *获取jqgrid所有选中的数据1
          *@param $dom <table>的id值
          *@return {list}
          */
