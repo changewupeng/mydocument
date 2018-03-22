@@ -22,7 +22,18 @@
   $(function(){
     $(".requied").unbind("change");
     $(".requied").bind("change",function(){
-       $(this).submitDataCheck();
+       var param={
+         success:function(data){
+           var ref=$(this).attr("ref");
+           $("#"+ref).text("ok");
+         },
+         fail:function(data){
+           //失败的操作
+           var ref=$(this).attr("ref");
+           $("#"+ref).text(data);
+         }
+       }
+       $(this).submitDataCheck(param);
     });
   });
 </script>

@@ -15,13 +15,23 @@
           }
         };
 
+        var defaut={
+          success:function(data){
+            //成功的操作
+          },
+          fail:function(data){
+            //失败的操作
+          }
+        }
         $.fn.extend({
-          "submitDataCheck":function(){
+          "submitDataCheck":function(object){
             return this.each(function(){
               var $this=$(this),
                   val=$this.val(),  //待校验的值
                   refId=$this.attr("ref");  //数据结果展示的地区，一般建议是 <span>
                   classes=$this.attr("class").split(/\s+/);  //该元素的 class 的列表
+
+              var param=$.extend({},defaut,object);
 
               if(classes.length>0){
                 for(var i=0;i<classes.length;i++){
@@ -31,11 +41,10 @@
                     var checkResult=rules[classes[i]].call($this,val);
                     //校验不通过的时候的操作
                     if(!checkResult.result){
-                       $("#"+refId).text(checkResult.errMsg);
-                       $this.focus();
+                       param.fail.call($this,checkResult.errMsg);
                        return;
                     }else   //校验通过的时候的操作
-                      $("#"+refId).text("ok");
+                      param.success.call($this,null);
                   }
                 }
               }

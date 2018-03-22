@@ -28,10 +28,10 @@
 
            for(var value in opts){
              if(value==selectedValue)
-              option=$("<option>",{'value':value,'selected':'true'});
+              option=$("<option>",{'value':value,'selected':'true','html':opts[value]});
              else
-              option=$("<option>",{'value':value});
-             option.html(opts[value]);
+              option=$("<option>",{'value':value,'html':opts[value]});
+            
              $this.append(option);
            }
          });
