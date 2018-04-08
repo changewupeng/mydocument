@@ -80,18 +80,32 @@
           *@param url 链接地址
           *@return {Object}
           **/
-        getDicByUrl:function(url){
+        getDicByUrl:function(url,async){
           var result;
           $.ajax({
             type:'get',
             url:url,
             data:{},
-            async:false,
+            async:async||true,
             success:function(resData){
               result=resData;
             }
           });
           return resData;
+        },
+
+        /**
+        *说明：动态的加载js文件
+        *@param url 链接地址
+        **/
+        loadJS:function(url){
+          $.ajax({
+              url: url,
+              async:false,
+              dataType: "script",
+              cache:true,
+              success: function(){}
+          });
         }
 
     }
