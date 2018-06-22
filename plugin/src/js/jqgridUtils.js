@@ -11,7 +11,7 @@
          *@param $dom <table>的id值
          *@return {list}
          */
-       getSelectRows：function(domId) {
+       getSelectRows:function(domId) {
           var rowIds = $("#"+domId).jqGrid('getGridParam', 'selarrrow'),
               selectedRows=[];
           for(var rowid=0;rowid<rowIds.length;rowid++){
@@ -30,15 +30,15 @@
         for(var i=0;i<colModel.length;i++){
         thId = domId+"_"+colModel[i].index;
         $("#"+thId).attr("title",column[i]);
-      },
+      }
+    },
       /**
         *使用jqgrid的 addRowData属性加载jqgrid数据
         *@param domId   <table>的id值
         *@param dataList  [{},{}]
         **/
-      addRowData:function(domId,dataList){
-        var $dom=$("#"+domId),
-            length=dataList.length;
+      addRowData:function($dom,dataList){
+        var length=dataList.length;
         //先清除数据
         $dom.jqGrid('GridDestroy');
 

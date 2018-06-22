@@ -73,14 +73,14 @@
           date=new Date(_timeStamp);
         return date;
       }
-      ，
+      ,
 
       /**
        *说明：将日期转换为星期几
        * @param date
        * @returns {String}
        */
-      nowFewWeeks:function（date）{
+      nowFewWeeks:function(date){
         if(date instanceof Date){
            var dayNames = new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
            return dayNames[date.getDay()];
@@ -88,7 +88,7 @@
            return "Param error,date type!";
        }
       }
-      ，
+      ,
       /***
         *说明：计算两个时间之间的差值
         *@param startDate  开始时间
@@ -107,11 +107,11 @@
         if(startDate instanceof Date && endDate instanceof Date){
             var minus=Math.floor((endDate-startDate);
             if(pattern=="day"){
-              return minus/(1000 * 60 * 60 * 24));
+              return minus/(1000 * 60 * 60 * 24);
             }else if(pattern=="hour"){
-              return minus/(1000 * 60 * 60));
+              return minus/(1000 * 60 * 60);
             }else if(pattern=="min"){
-              return minus/(1000 * 60));
+              return minus/(1000 * 60);
             }else
               return minus/1000;
         }else{
