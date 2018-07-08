@@ -25,6 +25,24 @@
               }
             }    
             return obj;
+        },
+        
+        /**
+         * 得到对象的所有keys
+         * @param object
+         * @returns {Array}
+         */
+        getObjectKeys:function(object){
+          return Object.keys(object);
+        },
+        
+      /**
+         * 得到对象的所有keys的个数
+         * @param object
+         * @returns {number}
+         */
+        getObjectKeysCount:function(Object){
+          return Object.keys(object).length;
         }
 
       }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>下拉生成插件</head>
+    <base target="_self">
+    <body>
+
+        <div>
+          <form>
+           <label for="test">选择:</label><select id='test'></select>
+           <label for="test1">默认:</label><select id='test1'></select>
+          </form>
+        </div>
+    </body>
+</html>
+<script src="../js/jquery-2.1.4.js" type="text/javascript"></script>
+<script src="../js/jquery.generateSelectOptions.v0.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+   
+    $("#test").generateSelectOptions();
+
+    var option={
+      options:{'1':'男孩','2':'女孩','3':'未知'},
+      defaultSelectValue:"3",
+      success:success
+    };
+
+
+    function success(){
+        console.log("ddddddddddd");
+    }
+
+    console.log("option",Object.keys(option));
+    $("#test1").generateSelectOptions(option).css({"background-color":'red'});
+  });
+</script>

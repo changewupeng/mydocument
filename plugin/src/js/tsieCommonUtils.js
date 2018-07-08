@@ -61,7 +61,7 @@
       },
       /**
         *获取项目的根目录
-        */a
+        */
       getRootPath:function() {
             //获取当前网址，如： http://localhost:8083/pms/res/case/caseContain.html
             var curWwwPath = window.document.location.href;
